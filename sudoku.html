@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="css/sudoku.css">
+</head>
+
+<body>
+    <div class="topgridmsg hidden-xs" id="topgridmsg">¡Buena suerte!</div>
+    <div id="playarea" dir="ltr" class="nouserselect" align="center">
+        <table dir="ltr" id="playtable" cellspacing="0" cellpadding="0" border="0" align="center">
+            <colgroup>
+                <col class="sudokucell45">
+                <col class="sudokucell43">
+                <col class="sudokucell43">
+                <col class="sudokucell44">
+                <col class="sudokucell43">
+                <col class="sudokucell43">
+                <col class="sudokucell44">
+                <col class="sudokucell43">
+                <col class="sudokucell46">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td id="td0" data-nombre="miniSudoku0" data-fila="fila0" data-columna="columna0" class="cellnormal">&nbsp;</td>
+                    <td id="td1" data-nombre="miniSudoku0" data-fila="fila0" data-columna="columna1" class="cellnormal">&nbsp;</td>
+                    <td id="td2" data-nombre="miniSudoku0" data-fila="fila0" data-columna="columna2" class="cellnormal" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td3" data-nombre="miniSudoku1" data-fila="fila0" data-columna="columna3" class="cellnormal" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td4" data-nombre="miniSudoku1" data-fila="fila0" data-columna="columna4" class="cellnormal">&nbsp;</td>
+                    <td id="td5" data-nombre="miniSudoku1" data-fila="fila0" data-columna="columna5" class="cellnormal" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td6" data-nombre="miniSudoku2" data-fila="fila0" data-columna="columna6" class="cellnormal" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td7" data-nombre="miniSudoku2" data-fila="fila0" data-columna="columna7" class="cellnormal">&nbsp;</td>
+                    <td id="td8" data-nombre="miniSudoku2" data-fila="fila0" data-columna="columna8" class="cellnormal">6
+                    </td>
+                </tr>
+                <tr>
+                    <td id="td9"  data-nombre="miniSudoku0"  data-fila="fila1"data-columna="columna0" class="cellnormal">9</td>
+                    <td id="td10" data-nombre="miniSudoku0" data-fila="fila1"data-columna="columna1" class="cellnormal">&nbsp;</td>
+                    <td id="td11" data-nombre="miniSudoku0" data-fila="fila1"data-columna="columna2" class="cellnormal" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td12" data-nombre="miniSudoku1" data-fila="fila1"data-columna="columna3" class="cellnormal" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td13" data-nombre="miniSudoku1" data-fila="fila1"data-columna="columna4" class="cellnormal">5</td>
+                    <td id="td14" data-nombre="miniSudoku1" data-fila="fila1"data-columna="columna5" class="cellnormal" style="border-right: 2px solid blue;">4</td>
+                    <td id="td15" data-nombre="miniSudoku2" data-fila="fila1"data-columna="columna6" class="cellnormal" style="border-left: 2px solid blue;">3</td>
+                    <td id="td16" data-nombre="miniSudoku2" data-fila="fila1"data-columna="columna7" class="cellnormal">8</td>
+                    <td id="td17" data-nombre="miniSudoku2" data-fila="fila1"data-columna="columna8" class="cellnormal">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td18" data-nombre="miniSudoku0" data-fila="fila2" data-columna="columna0" class="cellnormal" style="border-bottom: 2px solid blue;">4</td>
+                    <td id="td19" data-nombre="miniSudoku0" data-fila="fila2" data-columna="columna1" class="cellnormal" style="border-bottom: 2px solid blue;">5</td>
+                    <td id="td20" data-nombre="miniSudoku0" data-fila="fila2" data-columna="columna2" class="cellnormal" style="border-bottom: 2px solid blue; border-right: 2px solid blue;">3</td>
+                    <td id="td21" data-nombre="miniSudoku1" data-fila="fila2" data-columna="columna3" class="cellnormal" style="border-bottom: 2px solid blue; border-left: 2px solid blue;">8</td>
+                    <td id="td22" data-nombre="miniSudoku1" data-fila="fila2" data-columna="columna4" class="cellnormal" style="border-bottom: 2px solid blue;">1</td>
+                    <td id="td23" data-nombre="miniSudoku1" data-fila="fila2" data-columna="columna5" class="cellnormal" style="border-bottom: 2px solid blue; border-right: 2px solid blue;">6</td>
+                    <td id="td24" data-nombre="miniSudoku2" data-fila="fila2" data-columna="columna6" class="cellnormal" style="border-bottom: 2px solid blue; border-left: 2px solid blue;">9</td>
+                    <td id="td25" data-nombre="miniSudoku2" data-fila="fila2" data-columna="columna7" class="cellnormal" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td26" data-nombre="miniSudoku2" data-fila="fila2" data-columna="columna8" class="cellnormal" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td27" data-nombre="miniSudoku3" data-fila="fila3" data-columna="columna0" class="cellnormal" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td28" data-nombre="miniSudoku3" data-fila="fila3" data-columna="columna1" class="cellnormal" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td29" data-nombre="miniSudoku3" data-fila="fila3" data-columna="columna2" class="cellnormal" style="border-top: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td30" data-nombre="miniSudoku4" data-fila="fila3" data-columna="columna3" class="cellnormal" style="border-top: 2px solid blue; border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td31" data-nombre="miniSudoku4" data-fila="fila3" data-columna="columna4" class="cellnormal" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td32" data-nombre="miniSudoku4" data-fila="fila3" data-columna="columna5" class="cellnormal" style="border-top: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td33" data-nombre="miniSudoku5" data-fila="fila3" data-columna="columna6" class="cellnormal" style="border-top: 2px solid blue; border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td34" data-nombre="miniSudoku5" data-fila="fila3" data-columna="columna7" class="cellnormal" style="border-top: 2px solid blue;">5</td>
+                    <td id="td35" data-nombre="miniSudoku5" data-fila="fila3" data-columna="columna8" class="cellnormal" style="border-top: 2px solid blue;">4
+                    </td>
+                </tr>
+                <tr>
+                    <td id="td36" data-nombre="miniSudoku3" data-fila="fila4" data-columna="columna0" class="cellnormal">5</td>
+                    <td id="td37" data-nombre="miniSudoku3" data-fila="fila4" data-columna="columna1" class="cellnormal">4</td>
+                    <td id="td38" data-nombre="miniSudoku3" data-fila="fila4" data-columna="columna2" class="cellnormal" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td39" data-nombre="miniSudoku4" data-fila="fila4" data-columna="columna3" class="cellnormal" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td40" data-nombre="miniSudoku4" data-fila="fila4" data-columna="columna4" class="cellnormal">&nbsp;</td>
+                    <td id="td41" data-nombre="miniSudoku4" data-fila="fila4" data-columna="columna5" class="cellnormal" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td42" data-nombre="miniSudoku5" data-fila="fila4" data-columna="columna6" class="cellnormal" style="border-left: 2px solid blue;">7</td>
+                    <td id="td43" data-nombre="miniSudoku5" data-fila="fila4" data-columna="columna7" class="cellnormal">&nbsp;</td>
+                    <td id="td44" data-nombre="miniSudoku5" data-fila="fila4" data-columna="columna8" class="cellnormal">3
+                    </td>
+                </tr>
+                <tr>
+                    <td id="td45" data-nombre="miniSudoku3" data-fila="fila5" data-columna="columna0" class="cellnormal" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td46" data-nombre="miniSudoku3" data-fila="fila5" data-columna="columna1" class="cellnormal" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td47" data-nombre="miniSudoku3" data-fila="fila5" data-columna="columna2" class="cellnormal" style="border-bottom: 2px solid blue; border-right: 2px solid blue;">2</td>
+                    <td id="td48" data-nombre="miniSudoku4" data-fila="fila5" data-columna="columna3" class="cellnormal" style="border-bottom: 2px solid blue; border-left: 2px solid blue;">9</td>
+                    <td id="td49" data-nombre="miniSudoku4" data-fila="fila5" data-columna="columna4" class="cellnormal" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td50" data-nombre="miniSudoku4" data-fila="fila5" data-columna="columna5" class="cellnormal" style="border-bottom: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td51" data-nombre="miniSudoku5" data-fila="fila5" data-columna="columna6" class="cellnormal" style="border-bottom: 2px solid blue; border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td52" data-nombre="miniSudoku5" data-fila="fila5" data-columna="columna7" class="cellnormal" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td53" data-nombre="miniSudoku5" data-fila="fila5" data-columna="columna8" class="cellnormal" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td54" data-nombre="miniSudoku6" data-fila="fila6" data-columna="columna0" class="cellnormal" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td55" data-nombre="miniSudoku6" data-fila="fila6" data-columna="columna1" class="cellnormal" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td56" data-nombre="miniSudoku6" data-fila="fila6" data-columna="columna2" class="cellnormal" style="border-top: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td57" data-nombre="miniSudoku7" data-fila="fila6" data-columna="columna3" class="cellnormal" style="border-top: 2px solid blue; border-left: 2px solid blue;">5</td>
+                    <td id="td58" data-nombre="miniSudoku7" data-fila="fila6" data-columna="columna4" class="cellnormal" style="border-top: 2px solid blue;">9</td>
+                    <td id="td59" data-nombre="miniSudoku7" data-fila="fila6" data-columna="columna5" class="cellnormal" style="border-top: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td60" data-nombre="miniSudoku8" data-fila="fila6" data-columna="columna6" class="cellnormal" style="border-top: 2px solid blue; border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td61" data-nombre="miniSudoku8" data-fila="fila6" data-columna="columna7" class="cellnormal" style="border-top: 2px solid blue;">7</td>
+                    <td id="td62" data-nombre="miniSudoku8" data-fila="fila6" data-columna="columna8" class="cellnormal" style="border-top: 2px solid blue;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td63" data-nombre="miniSudoku6" data-fila="fila7" data-columna="columna0" class="cellnormal">&nbsp;</td>
+                    <td id="td64" data-nombre="miniSudoku6" data-fila="fila7" data-columna="columna1" class="cellnormal">&nbsp;</td>
+                    <td id="td65" data-nombre="miniSudoku6" data-fila="fila7" data-columna="columna2" class="cellnormal" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td66" data-nombre="miniSudoku7" data-fila="fila7" data-columna="columna3" class="cellnormal" style="border-left: 2px solid blue;">6</td>
+                    <td id="td67" data-nombre="miniSudoku7" data-fila="fila7" data-columna="columna4" class="cellnormal">&nbsp;</td>
+                    <td id="td68" data-nombre="miniSudoku7" data-fila="fila7" data-columna="columna5" class="cellnormal" style="border-right: 2px solid blue;">2</td>
+                    <td id="td69" data-nombre="miniSudoku8" data-fila="fila7" data-columna="columna6" class="cellnormal" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td70" data-nombre="miniSudoku8" data-fila="fila7" data-columna="columna7" class="cellnormal">&nbsp;</td>
+                    <td id="td71" data-nombre="miniSudoku8" data-fila="fila7" data-columna="columna8" class="cellnormal">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td72" data-nombre="miniSudoku6" data-fila="fila8" data-columna="columna0" class="cellnormal">&nbsp;</td>
+                    <td id="td73" data-nombre="miniSudoku6" data-fila="fila8" data-columna="columna1" class="cellnormal">2</td>
+                    <td id="td74" data-nombre="miniSudoku6" data-fila="fila8" data-columna="columna2" class="cellnormal" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td75" data-nombre="miniSudoku7" data-fila="fila8" data-columna="columna3" class="cellnormal" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td76" data-nombre="miniSudoku7" data-fila="fila8" data-columna="columna4" class="cellnormal">&nbsp;</td>
+                    <td id="td77" data-nombre="miniSudoku7" data-fila="fila8" data-columna="columna5" class="cellnormal" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td78" data-nombre="miniSudoku8" data-fila="fila8" data-columna="columna6" class="cellnormal" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td79" data-nombre="miniSudoku8" data-fila="fila8" data-columna="columna7" class="cellnormal">1</td>
+                    <td id="td80" data-nombre="miniSudoku8" data-fila="fila8" data-columna="columna8" class="cellnormal">8
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="valores" align="center">
+            <table dir="ltr" id="tablaValores" cellspacing="0" cellpadding="0" border="0" align="center">
+                <tr>
+                    <td class="numTablaValores" id="e1">1</td>
+                    <td class="numTablaValores" id="e2">2</td>
+                    <td class="numTablaValores" id="e3">3</td>
+                    <td class="numTablaValores" id="e4">4</td>
+                    <td class="numTablaValores" id="e5">5</td>
+                    <td class="numTablaValores" id="e6">6</td>
+                    <td class="numTablaValores" id="e7">7</td>
+                    <td class="numTablaValores" id="e8">8</td>
+                    <td class="numTablaValores" id="e9">9</td>
+                    <td class="numTablaValores" id="e0"> </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <div class="botones">
+        <p><button id="nuevoSudokuF">Haz un sudoku nuevo Nivel Facil</button></p>
+        <p><button id="nuevoSudokuM">Haz un sudoku nuevo Nivel Medio</button></p>
+        <p><button id="nuevoSudokuD">Haz un sudoku nuevo Nivel Dificil</button></p>
+        <p><button id="comprobar">Comprobar</button></p>
+        <p><button id="meRindo">Me rindo</button></p>
+        <p><button id="otraPartida">Otra partida</button></p>
+    </div>
+
+    <div id="ventanaModal" class="modal">
+        <div class="contenido-modal">
+            <span class="cerrar">X</span>
+            <h2 id="tituloModal">¡Enhorabuena! Está correctamente completado</h2>
+        </div>
+    </div>
+    
+    <script src="js/sudoku.js"></script>
+</body>
+
+</html>
